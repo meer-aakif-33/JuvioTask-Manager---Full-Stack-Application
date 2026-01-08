@@ -1,6 +1,78 @@
 #  Task Manager - Full-Stack Application
 
 A production-ready task management system built with modern web technologies, featuring secure authentication, real-time updates, and a beautiful responsive UI.
+## Development Approach & Methodology
+
+### **Architecture Philosophy**
+
+This project follows a **layered architecture** pattern with clear separation of concerns:
+
+**Backend (3-Layer Architecture):**
+
+```
+Controllers → Services → Database
+   ↓            ↓           ↓
+Handle HTTP  Business    Data Access
+Requests     Logic       (Prisma ORM)
+```
+
+**Frontend (Component-Based Architecture):**
+
+```
+Pages → Components → Hooks/Context → API Client
+  ↓         ↓            ↓              ↓
+Routes   Reusable    State Mgmt    Backend Comm
+         UI Parts
+```
+
+### **Key Design Decisions**
+
+**1. Type Safety First**
+
+* Full TypeScript implementation on both frontend and backend
+* Shared type definitions for consistency
+* Compile-time error catching reduces runtime bugs
+
+**2. Security by Design**
+
+* Authentication implemented before features
+* JWT with refresh tokens (industry standard)
+* Input validation on both client and server
+* Rate limiting and CORS protection built-in
+
+**3. Scalability Considerations**
+
+* Modular code structure for easy feature addition
+* Database indexes for query optimization
+* Stateless authentication (scales horizontally)
+* Clear separation between layers
+
+**4. Developer Experience**
+
+* Clear folder structure and naming conventions
+* Comprehensive error handling with helpful messages
+* Environment-based configuration
+* Code reusability through components and services
+
+### **Technology Selection Rationale**
+
+| Technology       | Why Chosen             | Benefits                                        |
+| ---------------- | ---------------------- | ----------------------------------------------- |
+| **Next.js 14**   | Modern React framework | SSR, routing, optimizations out-of-box          |
+| **TypeScript**   | Type safety            | Catch errors early, better IDE support          |
+| **Prisma**       | Modern ORM             | Type-safe queries, easy migrations              |
+| **PostgreSQL**   | Robust RDBMS           | ACID compliance, excellent for relational data  |
+| **JWT**          | Stateless auth         | Scalable, works with microservices              |
+| **Tailwind CSS** | Utility-first CSS      | Rapid development, small bundle size            |
+| **Zod**          | Schema validation      | Type-safe validation, same schema client/server |
+
+### **Development Workflow**
+
+1. **Backend First Approach**: Establish API contracts before UI
+2. **Incremental Development**: Authentication → Core features → Polish
+3. **Test as You Go**: Manual testing via Postman at each stage
+4. **Security Conscious**: Validation and protection at every layer
+5. **Documentation Driven**: Clear API docs and code comments
 
 ##  Key Features
 
